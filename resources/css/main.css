@@ -66,7 +66,7 @@ body.padTop53 {
   clear: both;
 }
 #wrap {
-  background-color: #333;
+  background-color: #23834B;
 }
 #right {
   display: none;
@@ -166,6 +166,9 @@ body.padTop53 {
 }
 #top .topnav {
   margin: 10px 15px 10px auto;
+}
+#top .navbar-inverse{
+  background: #23834B;
 }
 @media (min-width: 768px) {
   #top .topnav {
@@ -300,7 +303,6 @@ body.padTop53 {
 /*********************************************************/
 .user-media {
   display: none;
-  background-color: #444444;
 }
 @media (min-width: 768px) {
   .user-media {
@@ -527,22 +529,6 @@ body.padTop53 {
 #content {
   -webkit-transition: margin 0.4s;
   transition: margin 0.4s;
-}
-.outer {
-  padding: 10px;
-  background-color: #6e6e6e;
-}
-.outer:before,
-.outer:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.outer:after {
-  clear: both;
 }
 .inner {
   position: relative;
