@@ -159,7 +159,6 @@ body.padTop53 {
 /* BEGIN TOP bar */
 #top .navbar {
   margin-bottom: 0;
-  border-top: 3px solid #CD0067;
 }
 #top .navbar-brand {
   padding: 0;
@@ -167,8 +166,13 @@ body.padTop53 {
 #top .topnav {
   margin: 10px 15px 10px auto;
 }
+#top .topnav .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 #top .navbar-inverse{
   background: #23834B;
+  border-color: #23834B;
 }
 @media (min-width: 768px) {
   #top .topnav {
@@ -364,7 +368,6 @@ body.padTop53 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
-  background-color: #333;
   position: relative;
   overflow: hidden;
 }
@@ -441,7 +444,6 @@ body.padTop53 {
   -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset;
   box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
-  background: #404040;
 }
 #menu .nav-divider {
   border-top: 1px solid rgba(255, 255, 255, 0.01);
@@ -550,12 +552,8 @@ body.padTop53 {
 }
 /* END CONTENT STYLES *//* BEGIN FOOTER */
 #footer {
-  background: url("../img/pattern/px_by_Gre3g.png") repeat #444444;
   color: #f9f9f9;
   margin: 0 auto;
-  -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.05);
-  border-top: 1px solid #222;
 }
 #footer p {
   padding: 12px 0 0;
