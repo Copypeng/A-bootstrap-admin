@@ -5,7 +5,6 @@
         <title>管理中心</title>
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="resources/css/main.css"/>
-        <script src="assets/lib/modernizr-build.min.js"></script>
     </head>
     <body >
         <div id="wrap">
@@ -14,16 +13,10 @@
 <nav class="navbar navbar-inverse navbar-static-top">
     <!-- Brand and toggle get grouped for better mobile display -->
     <header class="navbar-header">
-      <a href="index.html" class="navbar-brand"></a>
+      <a href="index.html" class="navbar-brand">智慧农业物联网</a>
   	</header>
     <div class="topnav">
-
         <div class="btn-toolbar">
-            <div class="btn-group">
-                <a data-placement="bottom" data-original-title="全屏" data-toggle="tooltip" class="btn btn-success btn-sm" id="changeSidebarPos">
-                <span class="glyphicon glyphicon-resize-horizontal"></span>
-                </a>
-            </div>
             <div class="btn-group">
                 <a data-placement="bottom" data-original-title="提醒" href="#" data-toggle="tooltip" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-bell"></span>
@@ -36,7 +29,7 @@
                 </a>
             </div>
             <div class="btn-group">
-                <a href="login.html" data-toggle="tooltip" data-original-title="登出" data-placement="bottom" class="btn btn-metis-1 btn-sm">
+                <a href="#" data-toggle="tooltip" data-original-title="登出" data-placement="bottom" class="btn btn-metis-1 btn-sm">
 		  <span class="glyphicon glyphicon-log-out"></span>
                 </a>
             </div>
@@ -69,92 +62,39 @@
     <li class="nav-divider"></li>
     <li class="panel ">
         <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#dashboard-nav">
-            <i class="fa fa-dashboard"></i> Dashboard
+            <span class="glyphicon glyphicon-dashboard"></span> 设备管理
 	    <span class="pull-right">
-		<i class="fa fa-angle-left"></i>
+		<span class="glyphicon glyphicon-chevron-left"></span>
             </span>
         </a>
         <ul class="collapse" id="dashboard-nav">
-            <li class=""><a href="dashboard.html"><i class="fa fa-angle-right"></i>
-                Default Style</a></li>
-            <li class=""><a href="alterne.html"><i
-                    class="fa fa-angle-right"></i> Alternative Style</a></li>
+            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
+                二级菜单</a></li>
+            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
+                二级菜单</a></li>
         </ul>
     </li>
     <li class="panel ">
         <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-            <i class="fa fa-tasks"></i> Components
+             <span class="glyphicon glyphicon-eye-open"></span> 实时数据
 	    <span class="pull-right">
-		<i class="fa fa-angle-left"></i>
+		<span class="glyphicon glyphicon-chevron-left"></span>
             </span>
         </a>
         <ul class="collapse" id="component-nav">
-            <li class=""><a href="icon.html"><i class="fa fa-angle-right"></i> Icon </a>
-            </li>
-            <li class=""><a href="button.html"><i class="fa fa-angle-right"></i>
-                Button</a></li>
-            <li class=""><a href="progress.html"><i class="iconfa fa-angle-right"></i>
-                Progress</a></li>
-            <li class=""><a href="pricing.html"><i
-                    class="fa fa-credit-card"></i> Pricing Table</a></li>
-            <li class="">
-	      <a href="bgimage.html"><i class="fa fa-angle-right"></i> Bg Image</a>
-	    </li>
-	    <li class="">
-	      <a href="bgcolor.html"><i class="fa fa-angle-right"></i> Bg Color</a>
-	    </li>
+            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
+                二级菜单</a></li>
+            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
+                二级菜单</a></li>
         </ul>
     </li>
-    <li class="panel ">
-        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed"
-           data-target="#form-nav">
-            <i class="fa fa-pencil"></i> Forms
-	    <span class="pull-right">
-		<i class="fa fa-angle-left"></i>
-            </span>
-        </a>
-        <ul class="collapse" id="form-nav">
-            <li class=""><a href="form-general.html"><i
-                    class="fa fa-angle-right"></i> General</a></li>
-            <li class=""><a href="form-validation.html"><i
-                    class="fa fa-angle-right"></i> Validation</a></li>
-            <li class=""><a href="form-wysiwyg.html"><i
-                    class="fa fa-angle-right"></i> WYSIWYG</a></li>
-            <li class=""><a href="form-wizard.html"><i
-                    class="fa fa-angle-right"></i> Wizard &amp; File Upload</a></li>
-        </ul>
-    </li>
-    <li><a href="table.html"><i class="fa fa-table"></i> Tables</a></li>
-    <li><a href="file.html"><i class="fa fa-file"></i> File Manager</a>
-    </li>
-    <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a>
-    </li>
-    <li><a href="maps.html"><i class="fa fa-map-marker"></i> Maps</a></li>
-    <li><a href="chart.html"><i class="fa fa-bar-chart"></i> Charts</a></li>
-    <li><a href="calendar.html"><i class="fa fa-calendar"></i>
-        Calendar</a></li>
-    <li class="panel">
-        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#error-nav">
-            <i class="fa fa-warning-sign"></i> Error Pages
-	    <span class="pull-right">
-		<i class="fa fa-angle-left"></i>
-            </span>
-        </a>
-        <ul class="collapse" id="error-nav">
-            <li><a href="403.html"><i class="fa fa-angle-right"></i> 403</a></li>
-            <li><a href="404.html"><i class="fa fa-angle-right"></i> 404</a></li>
-            <li><a href="405.html"><i class="fa fa-angle-right"></i> 405</a></li>
-            <li><a href="500.html"><i class="fa fa-angle-right"></i> 500</a></li>
-            <li><a href="503.html"><i class="fa fa-angle-right"></i> 503</a></li>
-            <li><a href="offline.html"><i class="fa fa-angle-right"></i> offline</a></li>
-            <li><a href="countdown.html"><i class="fa fa-angle-right"></i> Under Construction</a></li>
-        </ul>
-    </li>
-    <li><a href="grid.html"><i class="fa fa-columns"></i> Grid</a></li>
-    <li><a href="blank.html"><i class="fa fa-square-o"></i> Blank
-        Page</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-warning-sign"></span> 异常警报</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-film"></span> LED管理</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-book"></span> 帮助文档</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span> 用户中心</a></li>
     <li class="nav-divider"></li>
-    <li><a href="login.html"><i class="fa fa-sign-in"></i> Login Page</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
 </ul>
 <!-- /#menu -->
             </div>
@@ -209,18 +149,9 @@
             </div>
             <!-- end #content -->
 
-            
-
         </div>
         <!-- /#wrap -->
-
-
-        <div id="footer">
-            <p>2013 &copy; Yeelink.net</p>
-        </div>
         <script src="resources/js/jquery-2.0.3.min.js"></script>
         <script src="resources/bootstrap/js/bootstrap.js"></script>
-        <script src="resources/js/main.js"></script>
-
     </body>
 </html>
