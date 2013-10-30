@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>管理中心</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
@@ -12,7 +12,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>    
+  <body>
+  	<!--the top nav begin-->    
     <div class="navbar navbar-default" role="navigation">
         <div class="navbar-inner">
         	<div class="navbar-header">
@@ -32,94 +33,166 @@
                 </ul>
         </div>
     </div>
-    
-
-
-    
+    <!--the top nav end-->
+    <!--the sidebar nav begin -->
     <div class="sidebar-nav">
     	<a href="index.html" class="nav-header" ><span class="glyphicon glyphicon-home"></span> 管理中心 首页</a>
         <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-dashboard"></span> 设备管理<span class="glyphicon glyphicon-chevron-up"></span></a>
         <ul id="dashboard-menu" class="nav nav-list collapse">
-            <li ><a href="users.html">Sample List</a></li>
-            <li ><a href="user.html">Sample Item</a></li>
-            <li ><a href="media.html">Media</a></li>
-            <li ><a href="calendar.html">Calendar</a></li>
-            
+            <li ><a href="new_device.html">绑定新设备</a></li>
+            <li ><a href="my_device.html">我的设备</a></li>
+            <li ><a href="led_device.html">LED管理</a></li>
+            <li ><a href="str_device.html">设备组织结构</a></li>
         </ul>
 
-        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Account<span class="label label-info">+3</span></a>
-        <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="sign-in.html">Sign In</a></li>
-            <li ><a href="sign-up.html">Sign Up</a></li>
-            <li ><a href="reset-password.html">Reset Password</a></li>
+        <a href="#real-time-data" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-eye-open"></span> 实时数据 <span class="glyphicon glyphicon-chevron-up"></span></a>
+        <ul id="real-time-data" class="nav nav-list collapse">
+            <li ><a href="overview_data.html">概览</a></li>
+            <li ><a href="area_data.html">按区域显示</a></li>
+            <li ><a href="visual_data.html">数据可视化</a></li>
         </ul>
 
-        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
-        <ul id="error-menu" class="nav nav-list collapse">
-            <li ><a href="403.html">403 page</a></li>
-            <li ><a href="404.html">404 page</a></li>
-            <li ><a href="500.html">500 page</a></li>
-            <li ><a href="503.html">503 page</a></li>
+        <a href="history_data.html" class="nav-header" ><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a>
+
+        <a href="error.html" class="nav-header"><span class="glyphicon glyphicon-bell"></span> 异常警报<span class="label label-danger">4</span></a>
+
+        <a href="#account-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-user"></span> 我的账户 <span class="glyphicon glyphicon-chevron-up"></span></a>
+        <ul id="account-menu" class="nav nav-list collapse">
+            <li ><a href="account_info.html">账户信息</a></li>
+            <li ><a href="change_password.html">修改密码</a></li>
         </ul>
 
-        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>
-        <ul id="legal-menu" class="nav nav-list collapse">
-            <li ><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        </ul>
-
-        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
-        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
+        <a href="logout.html" class="nav-header" ><span class="glyphicon glyphicon-log-out"></span> 登出</a>
     </div>
-    
-
+    <!--the siderbar nav en-->
     
     <div class="content">
-        
         <div class="header">
-            <h1 class="page-title">管理中心</h1>
+            	<!--the home stats begin-->
+        	<div class="stats">
+       			<p class="stat"><span class="number">3</span>设备异常</p>
+    			<p class="stat"><span class="number">0</span>传感器异常</p>
+    			<p class="stat"><span class="number">1</span>LED异常</p>
+    		</div>
+    	<!--the home stats end and page title begin-->
+        <h1 class="page-title">管理中心</h1>
         </div>
         <ul class="breadcrumb">
         	<li><a href="index.html">首页</a> <span class="divider">/</span></li>
             <li class="active">管理中心</li>
         </ul>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-                <br>
-        <br>
-        <br>
-        <br>
-        <br>
-                <br>
-        <br>
-        <br>
-        <br>
-        <br>        <br>
-        <br>
-        <br>
-        <br>
-        <br>        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-                <br>
-        <br>
-        <br>
-        <br>
-        <br>
-                <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <!--page title end and the main content begin-->
+        <div class="container">
+        	<!-- the alert info begin -->
+        	<div class="alert alert-info">
+        		<button type="button" class="close" data-dismiss="alert">×</button>
+        		欢迎使用智能农业物联网！我们推荐您使用<a href="http://www.google.com/intl/zh-CN/chrome/" target="_blank">Chrome浏览器</a>或者<a href="http://www.firefox.com.cn/" target="_blank">Firefox浏览器</a>，以获得最佳体验。<a href="http://www.whatbrowser.org/intl/zh-CN/" target="_blank">详情……</a>
+        	</div>
+        	<!-- the alert info end and the panel begin-->
+        	<div class="panel panel-default" id="all-device-info">
+        		<div class="panel-heading">所有设备</div>
+        		  <div class="panel-body">
+        			 <div class="stat-widget-container">
+        				    <div class="col-xs-4">
+        					   <p class="number">14 <span>台</span></p>
+        					   <p class="detail">控制器</p>
+        				    </div>
+        				    <div class="col-xs-4">
+        					   <p class="number">29 <span>个</span></p>
+        					   <p class="detail">传感器</p>
+        				    </div>
+            			     <div class="col-xs-4">
+        					   <p class="number">5 <span>块</span></p>
+        					   <p class="detail">LED显示器</p>
+        				    </div>    				
+        			 </div>
+        		  </div>
+        	</div>
+
+            <div class="row">
+                <div class="col-xs-6" id="control-device-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">控制器信息</div>
+                    <table class="table">
+                        <thead><tr>
+                            <th>控制器名称</th>
+                            <th>状态</th>
+                            <th>最新数据</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>控制器测试01</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                            <tr>
+                                <td>控制器测试02</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+
+                <div class="col-xs-6" id="sensor-device-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">传感器信息</div>
+                    <table class="table">
+                        <thead><tr>
+                            <th>传感器名称</th>
+                            <th>状态</th>
+                            <th>最新数据</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>传感器测试01</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                            <tr>
+                                <td>传感器测试02</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6" id="led-device-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">LED信息</div>
+                    <table class="table">
+                        <thead><tr>
+                            <th>LED名称</th>
+                            <th>状态</th>
+                            <th>最新数据</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>LED测试01</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                            <tr>
+                                <td>LED测试02</td>
+                                <td>正常</td>
+                                <td>未知</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+
+            </div>
+        <!--the content end -->
       
                     <footer>
                         <hr>
-                        <p>&copy; 2013 <a href="http://www.yeelink.net" target="_blank">Yeelink.net</a></p>
+                        <p class="pull-right">&copy; 2013 智慧农业物联网</p>
                     </footer>
                     
     </div>
