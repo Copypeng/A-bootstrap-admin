@@ -1,157 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <title>管理中心</title>
-        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="resources/css/main.css"/>
-    </head>
-    <body >
-        <div id="wrap">
-            <div id="top">
-                <!-- .navbar -->
-<nav class="navbar navbar-inverse navbar-static-top">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <header class="navbar-header">
-      <a href="index.html" class="navbar-brand">智慧农业物联网</a>
-  	</header>
-    <div class="topnav">
-        <div class="btn-toolbar">
-            <div class="btn-group">
-                <a data-placement="bottom" data-original-title="提醒" href="#" data-toggle="tooltip" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-bell"></span>
-                    <span class="label label-danger">4</span>
-                </a>
-            </div>
-            <div class="btn-group">
-                <a data-placement="bottom" data-original-title="文档" href="#" data-toggle="tooltip" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-book"></span>
-                </a>
-            </div>
-            <div class="btn-group">
-                <a href="#" data-toggle="tooltip" data-original-title="登出" data-placement="bottom" class="btn btn-metis-1 btn-sm">
-		  <span class="glyphicon glyphicon-log-out"></span>
-                </a>
-            </div>
+  <head>
+    <meta charset="utf-8">
+    <title>管理中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>    
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-inner">
+        	<div class="navbar-header">
+                <a class="navbar-brand" href="index.html">智慧农业物联网</a>
+             </div>
+                <ul class="nav navbar-nav pull-right">
+                    <li id= "fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> 用户名
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">我的账户</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
         </div>
     </div>
-    <!-- /.topnav -->
-</nav>
-<!-- /.navbar -->
-            </div>
-            <!-- /#top -->
+    
 
-            <div id="left">
-                <div class="media user-media">
-    <a class="user-link" href="">
-        <img class="media-object img-thumbnail user-img" alt="User Picture" src="resources/images/user.gif">
-    </a>
 
-    <div class="media-body">
-        <h6 class="media-heading">欢迎：</h6>
-        <ul class="list-unstyled user-info">
-            <li style="text-align:center;padding: 2px 0 2px;"><a href="./">用户名</a></li>
-            <li><small>上次登录:<br><span class="glyphicon glyphicon-calendar"></span> 16 Mar 16:32</small>
-            </li>
+    
+    <div class="sidebar-nav">
+    	<a href="index.html" class="nav-header" ><span class="glyphicon glyphicon-home"></span> 管理中心 首页</a>
+        <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-dashboard"></span> 设备管理<span class="glyphicon glyphicon-chevron-up"></span></a>
+        <ul id="dashboard-menu" class="nav nav-list collapse">
+            <li ><a href="users.html">Sample List</a></li>
+            <li ><a href="user.html">Sample Item</a></li>
+            <li ><a href="media.html">Media</a></li>
+            <li ><a href="calendar.html">Calendar</a></li>
+            
         </ul>
+
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Account<span class="label label-info">+3</span></a>
+        <ul id="accounts-menu" class="nav nav-list collapse">
+            <li ><a href="sign-in.html">Sign In</a></li>
+            <li ><a href="sign-up.html">Sign Up</a></li>
+            <li ><a href="reset-password.html">Reset Password</a></li>
+        </ul>
+
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
+        <ul id="error-menu" class="nav nav-list collapse">
+            <li ><a href="403.html">403 page</a></li>
+            <li ><a href="404.html">404 page</a></li>
+            <li ><a href="500.html">500 page</a></li>
+            <li ><a href="503.html">503 page</a></li>
+        </ul>
+
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>
+        <ul id="legal-menu" class="nav nav-list collapse">
+            <li ><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+        </ul>
+
+        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
+        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
     </div>
-</div>
-<!-- #menu -->
-<ul id="menu" class="collapse">
-    <li class="nav-header">菜 单</li>
-    <li class="nav-divider"></li>
-    <li class="panel ">
-        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#dashboard-nav">
-            <span class="glyphicon glyphicon-dashboard"></span> 设备管理
-	    <span class="pull-right">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-            </span>
-        </a>
-        <ul class="collapse" id="dashboard-nav">
-            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
-                二级菜单</a></li>
-            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
-                二级菜单</a></li>
-        </ul>
-    </li>
-    <li class="panel ">
-        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-             <span class="glyphicon glyphicon-eye-open"></span> 实时数据
-	    <span class="pull-right">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-            </span>
-        </a>
-        <ul class="collapse" id="component-nav">
-            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
-                二级菜单</a></li>
-            <li class=""><a href="#"><span class="glyphicon glyphicon-chevron-right"></span>
-                二级菜单</a></li>
-        </ul>
-    </li>
-    <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-warning-sign"></span> 异常警报</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-film"></span> LED管理</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-book"></span> 帮助文档</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span> 用户中心</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
-</ul>
-<!-- /#menu -->
-            </div>
-            <!-- /#left -->
+    
 
-            <div id="content">
-                    <div class="inner">
-                        
-
-<div class="col-lg-12">
-<h2>Welcome!</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-</div>
-
-                    </div>
-                    <!-- end .inner -->
-            </div>
-            <!-- end #content -->
-
+    
+    <div class="content">
+        
+        <div class="header">
+            <h1 class="page-title">管理中心</h1>
         </div>
-        <!-- /#wrap -->
-        <script src="resources/js/jquery-2.0.3.min.js"></script>
-        <script src="resources/bootstrap/js/bootstrap.js"></script>
-    </body>
+        <ul class="breadcrumb">
+        	<li><a href="index.html">首页</a> <span class="divider">/</span></li>
+            <li class="active">管理中心</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+                <br>
+        <br>
+        <br>
+        <br>
+        <br>
+                <br>
+        <br>
+        <br>
+        <br>
+        <br>        <br>
+        <br>
+        <br>
+        <br>
+        <br>        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+                <br>
+        <br>
+        <br>
+        <br>
+        <br>
+                <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+                    <footer>
+                        <hr>
+                        <p>&copy; 2013 <a href="http://www.yeelink.net" target="_blank">Yeelink.net</a></p>
+                    </footer>
+                    
+    </div>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+  </body>
 </html>
+
+
