@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>绑定新设备 — 管理中心</title>
+    <title>设备组织结构 — 管理中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -12,7 +12,7 @@
     <![endif]-->
   </head>
   <body>
-  	<!--the top nav begin-->    
+  	<!--the top nav begin-->
     <div class="navbar navbar-default" role="navigation">
         <div class="navbar-inner">
         	<div class="navbar-header">
@@ -38,9 +38,9 @@
     	<a href="index.html" class="nav-header" ><span class="glyphicon glyphicon-home"></span> 管理中心 首页</a>
         <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-dashboard"></span> 设备管理<span class="glyphicon glyphicon-chevron-up"></span></a>
         <ul id="dashboard-menu" class="nav nav-list in collapse">
-            <li class="active"><a href="new_device.html">绑定新设备</a></li>
+            <li ><a href="new_device.html">绑定新设备</a></li>
             <li ><a href="my_device.html">我的设备</a></li>
-            <li ><a href="str_device.html">设备组织结构</a></li>
+            <li class="active"><a href="str_device.html">设备组织结构</a></li>
         </ul>
 
         <a href="led_manage.html" class="nav-header"><span class="glyphicon glyphicon-hd-video"></span> LED管理</a>
@@ -59,80 +59,30 @@
         <a href="logout.html" class="nav-header" ><span class="glyphicon glyphicon-log-out"></span> 登出</a>
     </div>
     <!--the siderbar nav en-->
-    
+
     <div class="content">
         <div class="header">
     	<!--page title begin-->
         <h1 class="page-title">设备管理</h1>
         </div>
         <ul class="breadcrumb">
-        	<li><a href="new_device.html">绑定新设备</a> <span class="divider">/</span></li>
+        	<li><a href="str_device.html">设备组织结构管理</a> <span class="divider">/</span></li>
             <li class="active">设备管理</li>
         </ul>
         <!--page title end and the main content begin-->
+
         <div class="container">
-            <!--new device from begin-->
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-box">
-                        <form action="#" class="form-horizontal" id="add-device" role="form" method="post">
-                            <div class="form-group">
-                                <label for="device-type" class="col-xs-4 control-label">设备类型</label>
-                                <div class="col-xs-4">
-                                	<label class="radio-inline">
-                                    <input type="radio" id="device-type" name="device-type" value="device">
-                                     <span class="glyphicon glyphicon-transfer"></span> 传感设备
-                                    </label>
-                                    <label class="radio-inline">
-                                    <input type="radio" id="device-type" name="device-type" value="led">
-                                     <span class="glyphicon glyphicon-hd-video"></span> LED显示器
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="device-name" class="col-xs-4 control-label">设备名称</label>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="device-name" name="device-name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="product-uuid" class="col-xs-4 control-label">设备ID</label>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="product-uuid" name="product-uuid">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="product-key" class="col-xs-4 control-label">设备密钥</label>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="product-key" name="product-key">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="device-description" class="col-xs-4 control-label">设备描述</label>
-                                <div class="col-xs-4">
-                                    <textarea class="form-control" id="device-description" name="device-description" rows="3" maxlength="150"></textarea>
-                                </div>
-                            </div>
-                           	<div class="form-actions col-xs-8 pull-right">
-                        		<button type="submit" class="btn btn-primary">立即绑定</button>
 
-                        		<button href="new_device.html" class="btn btn-default">取消</button>
-                    		</div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <!--the container end -->
 
-
-            </div>
-        <!--the content end -->
-      
                     <footer>
                         <hr>
                         <p class="pull-right">&copy; 2013 智慧农业物联网</p>
                     </footer>
-                    
+
     </div>
+    <!--the content end -->
     <script src="lib/bootstrap/js/bootstrap.js"></script>
   </body>
 </html>
