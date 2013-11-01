@@ -72,7 +72,83 @@
         <!--page title end and the main content begin-->
 
         <div class="container">
-
+            <div class="row">
+                <div class="display">
+                <div class="col-xs-4">
+                <form action="#" class="form-horizontal" id="add-category" role="form" method="post">
+                            <div class="form-group">
+                                <label for="add-category" class="col-xs-4 control-label">分类</label>
+                                <div class="col-xs-8">
+                                	<input type="text" class="form-control" id="add-category" name="add-category">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="device-name" class="col-xs-4 control-label">父级</label>
+                                <div class="col-xs-8">
+                                    <select class="form-control">
+                                        <option class="level-0" value="-1">无</option>
+                                        <option class="level-0" value="0">父分级01</option>
+                                        <option class="level-0" value="1">父分级02</option>
+                                        <option class="level-0" value="2">父分级03</option>
+                                        <option class="level-1" value="3">&nbsp;&nbsp;&nbsp;子分级03</option>
+                                        <option class="level-1" value="4">&nbsp;&nbsp;&nbsp;子分级04</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="remark-category" class="col-xs-4 control-label">备注</label>
+                                <div class="col-xs-8">
+                                    <textarea class="form-control" id="remark-category" name="remark-category" rows="3" maxlength="150"></textarea>
+                                </div>
+                            </div>
+                           	<div class="form-actions col-xs-8 pull-right">
+                        		<button type="submit" class="btn btn-primary">添加分类</button>
+                    		</div>
+                </form>
+                </div>
+                <div class="col-xs-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">设备组织名称</div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>分类名</th>
+                                <th>备注</th>
+                                <th>所含设备</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>父分级01</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试01</th>
+                            </tr>
+                            <tr>
+                                <th>父分级02</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02</th>
+                            </tr>
+                            <tr>
+                                <th>父分级03</th>
+                                <th>无</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;&nbsp;&nbsp;子分级03</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;&nbsp;&nbsp;子分级04</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
         </div>
         <!--the container end -->
 
