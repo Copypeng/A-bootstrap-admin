@@ -242,9 +242,13 @@ footer {
 .sidebar-nav .nav-list.collapse.in {
   border-bottom: 1px solid #ccc;
 }
-/* from box */
+/*new-device from box */
 .form-box {
-  margin: 60px auto;
+  padding: 20px auto;
+}
+/*my_device toolbar */
+.toolbar {
+    margin:24px auto;
 }
 /* Tweaks for mobile */
 @media (max-width: 641px) {
