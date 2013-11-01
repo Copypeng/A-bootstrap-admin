@@ -2,9 +2,10 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>管理中心</title>
+    <title>异常警报 — 管理中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-switch.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
     <!--[if lt IE 9]>
@@ -12,7 +13,7 @@
     <![endif]-->
   </head>
   <body>
-  	<!--the top nav begin-->    
+  	<!--the top nav begin-->
     <div class="navbar navbar-default" role="navigation">
         <div class="navbar-inner">
         	<div class="navbar-header">
@@ -44,8 +45,7 @@
         </ul>
 
         <a href="led_manage.html" class="nav-header"><span class="glyphicon glyphicon-hd-video"></span> LED管理</a>
-
-        <a href="real_time_data.html" class="nav-header"><span class="glyphicon glyphicon-eye-open"></span> 实时数据 </a>
+        <a href="real_time_data.html" class="nav-header"><span class="glyphicon glyphicon-eye-open"></span> 实时数据</a>
 
         <a href="history_data.html" class="nav-header" ><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a>
 
@@ -60,104 +60,86 @@
         <a href="logout.html" class="nav-header" ><span class="glyphicon glyphicon-log-out"></span> 登出</a>
     </div>
     <!--the siderbar nav en-->
-    
+
     <div class="content">
         <div class="header">
-            	<!--the home stats begin-->
-        	<div class="stats">
-       			<p class="stat"><span class="number">0</span>传感设备异常</p>
-    			<p class="stat"><span class="number">0</span>LED异常</p>
-    		</div>
-    	<!--the home stats end and page title begin-->
-        <h1 class="page-title">管理中心</h1>
+    	<!--page title begin-->
+        <h1 class="page-title">异常警报</h1>
         </div>
-        <ul class="breadcrumb">
-        	<li><a href="index.html">首页</a> <span class="divider">/</span></li>
-            <li class="active">管理中心</li>
-        </ul>
         <!--page title end and the main content begin-->
+
         <div class="container">
-        	<!-- the alert info begin -->
-        	<div class="alert alert-info">
+            <div class="display">
+            <!-- the alert info begin -->
+        	<div class="alert alert-danger">
         		<button type="button" class="close" data-dismiss="alert">×</button>
-        		欢迎使用智能农业物联网！我们推荐您使用<a href="http://www.google.com/intl/zh-CN/chrome/" target="_blank" class="alert-link">Chrome浏览器</a>或者<a href="http://www.firefox.com.cn/" target="_blank" class="alert-link">Firefox浏览器</a>，以获得最佳体验。<a href="http://www.whatbrowser.org/intl/zh-CN/" target="_blank" class="alert-link">详情……</a>
+                <span id="error-type">传感设备</span>异常！您的传感设备<span class="alert-link" id="error-name"> 气象01 </span>有异常。
+        	</div>
+            <div class="alert alert-danger">
+        		<button type="button" class="close" data-dismiss="alert">×</button>
+                <span id="error-type">LED显示设备</span>异常！您的传感设备<span class="alert-link" id="error-name">  LED测试02 </span>有异常。
         	</div>
         	<!-- the alert info end and the panel begin-->
-        	<div class="panel panel-default" id="all-device-info">
-        		<div class="panel-heading">所有设备</div>
-        		  <div class="panel-body">
-        			 <div class="stat-widget-container">
-        				    <div class="col-xs-6">
-        					   <p class="number">14 <span>台</span></p>
-        					   <p class="detail">传感设备</p>
-        				    </div>
-            			     <div class="col-xs-6">
-        					   <p class="number">5 <span>块</span></p>
-        					   <p class="detail">LED显示器</p>
-        				    </div>    				
-        			 </div>
-        		  </div>
-        	</div>
-
-            <div class="row">
-                <div class="col-xs-6" id="device-info">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><span class="glyphicon glyphicon-transfer"></span> 传感设备信息</div>
-                    <table class="table">
+            <div class="panel panel-default" id="all-device-detail">
+                <div class="panel-heading">
+                <h5>我的设备信息</h5>
+                </div>
+                  <table class="table">
                         <thead><tr>
-                            <th>传感设备名称</th>
+                            <th>设备名称</th>
+                            <th>类型</th>
                             <th>状态</th>
                             <th>最新数据</th>
+                            <th>操作</th>
                         </tr></thead>
                         <tbody>
                             <tr>
                                 <td>气象站01</td>
-                                <td>正常</td>
+                                <td><span class="glyphicon glyphicon-transfer"></span> 传感设备</td>
+                                <td>异常</td>
                                 <td>未知</td>
+                                <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-device">修改</button> <a class="btn btn-danger btn-xs" href="#">删除</a></td>
                             </tr>
                             <tr>
                                 <td>气象站02</td>
+                                <td><span class="glyphicon glyphicon-transfer"></span> 传感设备</td>
                                 <td>正常</td>
                                 <td>未知</td>
+                                <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-device">修改</button> <a class="btn btn-danger btn-xs" href="#">删除</a></td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-
-                <div class="col-xs-6" id="sensor-device-info">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><span class="glyphicon glyphicon-hd-video"></span> LED显示器信息</div>
-                    <table class="table">
-                        <thead><tr>
-                            <th>LED名称</th>
-                            <th>状态</th>
-                            <th>最新数据</th>
-                        </tr></thead>
-                        <tbody>
                             <tr>
                                 <td>LED测试01</td>
+                                <td><span class="glyphicon glyphicon-hd-video"></span> LED显示器</td>
                                 <td>正常</td>
                                 <td>未知</td>
+                                <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-device">修改</button> <a class="btn btn-danger btn-xs" href="#">删除</a></td>
                             </tr>
                             <tr>
                                 <td>LED测试02</td>
-                                <td>正常</td>
+                                <td><span class="glyphicon glyphicon-hd-video"></span> LED显示器</td>
+                                <td>异常</td>
                                 <td>未知</td>
+                                <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-device">修改</button> <a class="btn btn-danger btn-xs" href="#">删除</a></td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                </div>
             </div>
-        <!--the content end -->
-      
+            </div>
+            </div>
+        </div>
+        <!--the container end -->
+
                     <footer>
                         <hr>
                         <p class="pull-right">&copy; 2013 智慧农业物联网</p>
                     </footer>
-                    
+
     </div>
+    <!--the content end -->
+    <script>
+
+    </script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrap-switch.js"></script>
   </body>
 </html>
