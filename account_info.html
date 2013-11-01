@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>实时数据 — 管理中心</title>
+    <title>账户信息 — 管理中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -44,15 +44,16 @@
         </ul>
 
         <a href="led_manage.html" class="nav-header"><span class="glyphicon glyphicon-hd-video"></span> LED管理</a>
-        <a href="real_time_data.html" class="nav-header"><span class="glyphicon glyphicon-eye-open"></span> 实时数据</a>
+
+        <a href="real_time_data.html" class="nav-header"><span class="glyphicon glyphicon-eye-open"></span> 实时数据 </a>
 
         <a href="history_data.html" class="nav-header" ><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a>
 
         <a href="error.html" class="nav-header"><span class="glyphicon glyphicon-bell"></span> 异常警报<span class="label label-danger">4</span></a>
 
         <a href="#account-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-user"></span> 我的账户 <span class="glyphicon glyphicon-chevron-up"></span></a>
-        <ul id="account-menu" class="nav nav-list collapse">
-            <li ><a href="account_info.html">账户信息</a></li>
+        <ul id="account-menu" class="nav nav-list collapse in">
+            <li class="active"><a href="account_info.html">账户信息</a></li>
             <li ><a href="change_password.html">修改密码</a></li>
         </ul>
 
@@ -62,17 +63,48 @@
 
     <div class="content">
         <div class="header">
-    	<!--page title begin-->
-        <h1 class="page-title">实时数据</h1>
+        <h1 class="page-title">账户信息</h1>
         </div>
+        <ul class="breadcrumb">
+        	<li><a href="account_info.html">账户信息</a> <span class="divider">/</span></li>
+            <li class="active">我的账户</li>
+        </ul>
         <!--page title end and the main content begin-->
-
         <div class="container">
-            <div class="display">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="display">
+                        <form action="#" class="form-horizontal" id="add-device" role="form" method="post">
+                            <div class="form-group">
+                                <label for="user-name" class="col-xs-4 control-label">用户名</label>
+                                <div class="col-xs-4">
+                                    <input type="text" class="form-control" id="user-name" name="user-name" placeholder="用户名" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-email" class="col-xs-4 control-label">电子邮箱</label>
+                                <div class="col-xs-4">
+                                    <input type="email" class="form-control" id="user-email" name="user-email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-description" class="col-xs-4 control-label">关于</label>
+                                <div class="col-xs-4">
+                                    <textarea class="form-control" id="user-description" name="user-description" rows="3" maxlength="150"></textarea>
+                                </div>
+                            </div>
+                           	<div class="form-actions col-xs-8 pull-right">
+                        		<button type="submit" class="btn btn-primary">保存</button>
+
+                        		<button href="new_device.html" class="btn btn-default">取消</button>
+                    		</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             </div>
-        </div>
-        <!--the container end -->
+        <!--the content end -->
 
                     <footer>
                         <hr>
@@ -80,10 +112,6 @@
                     </footer>
 
     </div>
-    <!--the content end -->
-    <script>
-
-    </script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
   </body>
 </html>
