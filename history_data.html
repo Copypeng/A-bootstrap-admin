@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>历史数据查询 — 管理中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<!--the top nav begin-->
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-inner">
+        	<div class="navbar-header">
+                <a class="navbar-brand" href="index.html">智慧农业物联网</a>
+             </div>
+                <ul class="nav navbar-nav pull-right" >
+                    <li id= "fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> 用户名
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="account_info.html">我的账户</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <!--the top nav end-->
+    <!--the sidebar nav begin -->
+    <div class="sidebar-nav">
+    	<a href="index.html" class="nav-header" ><span class="glyphicon glyphicon-home"></span> 管理中心 首页</a>
+        <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-dashboard"></span> 设备管理<span class="glyphicon glyphicon-chevron-up"></span></a>
+        <ul id="dashboard-menu" class="nav nav-list collapse">
+            <li ><a href="new_device.html">绑定新设备</a></li>
+            <li ><a href="my_device.html">我的设备</a></li>
+            <li ><a href="str_device.html">设备组织结构</a></li>
+        </ul>
+
+        <a href="led_manage.html" class="nav-header"><span class="glyphicon glyphicon-hd-video"></span> LED管理</a>
+        <a href="real_time_data.html" class="nav-header"><span class="glyphicon glyphicon-eye-open"></span> 实时数据</a>
+
+        <a href="history_data.html" class="nav-header" ><span class="glyphicon glyphicon-cloud"></span> 历史数据查询</a>
+
+        <a href="error.html" class="nav-header"><span class="glyphicon glyphicon-bell"></span> 异常警报<span class="label label-danger">4</span></a>
+
+        <a href="#account-menu" class="nav-header collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-user"></span> 我的账户 <span class="glyphicon glyphicon-chevron-up"></span></a>
+        <ul id="account-menu" class="nav nav-list collapse">
+            <li ><a href="account_info.html">账户信息</a></li>
+            <li ><a href="change_password.html">修改密码</a></li>
+        </ul>
+
+        <a href="logout.html" class="nav-header" ><span class="glyphicon glyphicon-log-out"></span> 登出</a>
+    </div>
+    <!--the siderbar nav en-->
+
+    <div class="content">
+        <div class="header">
+    	<!--page title begin-->
+        <h1 class="page-title">历史数据</h1>
+        </div>
+        <!--page title end and the main content begin-->
+
+        <div class="container">
+                <div class="row">
+                    <div id="graphic" class="col-xs-12">
+                        <div id="Temp-chart" class="chart-area"></div>
+                        <div id="Humidity-chart" class="chart-area"></div>
+                        <div id="Lux-chart" class="chart-area"></div>
+                        <div id="PH-chart" class="chart-area"></div>
+                        <div id="CO2-chart" class="chart-area"></div>
+                    </div><!--/span-->
+                </div>
+        </div>
+        <!--the container end -->
+
+                    <footer>
+                        <hr>
+                        <p class="pull-right">&copy; 2013 智慧农业物联网</p>
+                    </footer>
+
+    </div>
+    <!--the content end -->
+    <script>
+
+    </script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/esl/esl.js"></script>
+    <script type="text/javascript">
+        require.config({
+            packages: [
+                {
+                    name: 'echarts',
+                    location: 'lib/echarts/src',
+                    main: 'echarts'
+                },
+                {
+                    name: 'zrender',
+                    location: 'lib/zrender/src',
+                    main: 'zrender'
+                }
+            ]
+        });
+
+        var Tempoption = {
+            title : {
+            text: '温度',
+            subtext: '数据虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['环境温度','土壤温度']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataZoom : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            dataZoom : {
+                show : true,
+                realtime : true,
+                start : 20,
+                end : 80
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push('2013-10-' + i);
+                }
+                return list;
+                }()
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name : '摄氏度 /°C',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'环境温度',
+                    type:'line',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 30));
+                    }
+                    return list;
+                    }()
+                },
+                {
+                    name:'土壤温度',
+                    type:'line',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 29));
+                    }
+                        return list;
+                    }()
+                }
+            ]
+        };
+
+        var Humidityoption = {
+            title : {
+            text: '湿度',
+            subtext: '数据虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['环境湿度','土壤湿度']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataZoom : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            dataZoom : {
+                show : true,
+                realtime : true,
+                start : 20,
+                end : 80
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push('2013-10-' + i);
+                }
+                return list;
+                }()
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name : '相对湿度 /%RH',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'环境湿度',
+                    type:'bar',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 80));
+                    }
+                    return list;
+                    }()
+                },
+                {
+                    name:'土壤湿度',
+                    type:'bar',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 60));
+                    }
+                        return list;
+                    }()
+                }
+            ]
+        };
+
+        var Luxoption = {
+            title : {
+            text: '光照强度',
+            subtext: '数据虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataZoom : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            dataZoom : {
+                show : true,
+                realtime : true,
+                start : 20,
+                end : 80
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push('2013-10-' + i);
+                }
+                return list;
+                }()
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name : '勒克斯 /lx',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'光照强度',
+                    type:'line',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 500));
+                    }
+                    return list;
+                    }()
+                }
+            ]
+        };
+
+        var PHoption = {
+            title : {
+            text: 'pH值',
+            subtext: '数据虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataZoom : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            dataZoom : {
+                show : true,
+                realtime : true,
+                start : 20,
+                end : 80
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push('2013-10-' + i);
+                }
+                return list;
+                }()
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'pH值',
+                    type:'bar',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 9));
+                    }
+                    return list;
+                    }()
+                }
+            ]
+        };
+
+        var CO2option = {
+            title : {
+            text: '二氧化碳浓度',
+            subtext: '数据虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataZoom : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            dataZoom : {
+                show : true,
+                realtime : true,
+                start : 20,
+                end : 80
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push('2013-10-' + i);
+                }
+                return list;
+                }()
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name : '百万分比浓度 /ppm',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'pH值',
+                    type:'line',
+                    data:function(){
+                    var list = [];
+                    for (var i = 1; i <= 30; i++) {
+                        list.push(Math.round(Math.random()* 500));
+                    }
+                    return list;
+                    }()
+                }
+            ]
+        };
+
+        require(
+            [
+                'echarts',
+                'echarts/chart/line',
+                'echarts/chart/bar'
+            ],
+            function(ec) {
+                var myChart = ec.init(document.getElementById('Temp-chart'));
+                myChart.setOption(Tempoption);
+                var myChart = require('echarts').init(document.getElementById('Humidity-chart'));
+                myChart.setOption(Humidityoption);
+                var myChart = require('echarts').init(document.getElementById('Lux-chart'));
+                myChart.setOption(Luxoption);
+                var myChart = require('echarts').init(document.getElementById('PH-chart'));
+                myChart.setOption(PHoption);
+                var myChart = require('echarts').init(document.getElementById('CO2-chart'));
+                myChart.setOption(CO2option);
+            }
+        )
+    </script>
+  </body>
+</html>

@@ -254,6 +254,10 @@ footer {
 .toolbar {
     margin:24px auto;
 }
+/*chart */
+.chart-area{
+    height:300px;
+}
 /* Tweaks for mobile */
 @media (max-width: 641px) {
   .content {

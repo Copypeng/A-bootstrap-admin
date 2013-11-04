@@ -69,7 +69,11 @@
 
         <div class="container">
             <div class="display">
-
+                <div class="row">
+                    <div id="graphic" class="col-xs-12">
+                        <div id="Temp-chart" style="height:300px"></div>
+                    </div><!--/span-->
+                </div>
             </div>
         </div>
         <!--the container end -->
@@ -85,5 +89,82 @@
 
     </script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/esl/esl.js"></script>
+    <script type="text/javascript">
+        require.config({
+            packages: [
+                {
+                    name: 'echarts',
+                    location: 'lib/echarts/src',
+                    main: 'echarts'
+                },
+                {
+                    name: 'zrender',
+                    location: 'lib/zrender/src',
+                    main: 'zrender'
+                }
+            ]
+        });
+
+        var option = {
+            title : {
+            text: '动态数据',
+            subtext: '纯属虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['环境温度','土壤温度']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : true,
+                    dataView : {readOnly: false},
+                    magicType:['line', 'bar'],
+                    restore : true,
+                    saveAsImage : true
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'环境温度',
+                    type:'line',
+                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                },
+                {
+                    name:'土壤温度',
+                    type:'line',
+                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                }
+            ]
+        };
+
+        require(
+            [
+                'echarts',
+                'echarts/chart/line',
+                'echarts/chart/bar'
+            ],
+            function(ec) {
+                var myChart = ec.init(document.getElementById('Temp-chart'));
+                myChart.setOption(option);
+            }
+        )
+    </script>
   </body>
 </html>
