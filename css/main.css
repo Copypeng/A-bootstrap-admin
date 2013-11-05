@@ -257,6 +257,7 @@ footer {
 /*chart */
 .chart-area{
     height:300px;
+    margin:38px auto;
 }
 /* Tweaks for mobile */
 @media (max-width: 641px) {
