@@ -72,19 +72,81 @@
         <!--page title end and the main content begin-->
 
         <div class="container">
+            <div class="display">
             <div class="row">
-                <div class="display">
-                <div class="col-xs-4">
-                <form action="#" class="form-horizontal" id="add-category" role="form" method="post">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h5>设备组织结构</h5></div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>分类名</th>
+                                <th>备注</th>
+                                <th>所含设备</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>父分级01</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试01</th>
+                                <th><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-str">修改</button> <a class="btn btn-default btn-xs" href="#">删除</a></th>
+                            </tr>
+                            <tr>
+                                <th>父分级02</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02</th>
+                                <th><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-str">修改</button> <a class="btn btn-default btn-xs" href="#">删除</a></th>
+                            </tr>
+                            <tr>
+                                <th>父分级03</th>
+                                <th>无</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;&nbsp;&nbsp;子分级03</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
+                                <th><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-str">修改</button> <a class="btn btn-default btn-xs" href="#">删除</a></th>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;&nbsp;&nbsp;子分级04</th>
+                                <th>无</th>
+                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
+                                <th><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-str">修改</button> <a class="btn btn-default btn-xs" href="#">删除</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <button class="btn btn-danger" data-toggle="modal" data-target="#add-str"><span class="glyphicon glyphicon-new-window"></span> 新增分类 </button>
+            </div>
+
+            </div>
+            </div>
+        </div>
+        <!--the container end -->
+        <!--edit Modal -->
+        <div class="modal fade" id="edit-str" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">修改分类</h4>
+                    </div>
+                    <div class="modal-body row">
+                        <form action="#" class="form-horizontal" id="edit-category" role="form" method="post">
                             <div class="form-group">
-                                <label for="add-category" class="col-xs-4 control-label">分类</label>
-                                <div class="col-xs-8">
-                                	<input type="text" class="form-control" id="add-category" name="add-category">
+                                <label for="category-name" class="control-label col-xs-4">分类名</label>
+                                <div class="col-xs-6">
+                                	<input type="text" class="form-control" id="category-name" name="category-name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="device-name" class="col-xs-4 control-label">父级</label>
-                                <div class="col-xs-8">
+                                <label for="parent" class="control-label col-xs-4">父级</label>
+                                <div class="col-xs-6">
                                     <select class="form-control">
                                         <option class="level-0" value="-1">无</option>
                                         <option class="level-0" value="0">父分级01</option>
@@ -97,60 +159,64 @@
                             </div>
                             <div class="form-group">
                                 <label for="remark-category" class="col-xs-4 control-label">备注</label>
-                                <div class="col-xs-8">
+                                <div class="col-xs-6">
                                     <textarea class="form-control" id="remark-category" name="remark-category" rows="3" maxlength="150"></textarea>
                                 </div>
                             </div>
-                           	<div class="form-actions col-xs-8 pull-right">
-                        		<button type="submit" class="btn btn-primary">添加分类</button>
-                    		</div>
                 </form>
-                </div>
-                <div class="col-xs-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">设备组织结构</div>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>分类名</th>
-                                <th>备注</th>
-                                <th>所含设备</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>父分级01</th>
-                                <th>无</th>
-                                <th>气象站01 + LED测试01</th>
-                            </tr>
-                            <tr>
-                                <th>父分级02</th>
-                                <th>无</th>
-                                <th>气象站01 + LED测试02</th>
-                            </tr>
-                            <tr>
-                                <th>父分级03</th>
-                                <th>无</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>&nbsp;&nbsp;&nbsp;子分级03</th>
-                                <th>无</th>
-                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
-                            </tr>
-                            <tr>
-                                <th>&nbsp;&nbsp;&nbsp;子分级04</th>
-                                <th>无</th>
-                                <th>气象站01 + LED测试02 + 气象站01 + LED测试02</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!--the container end -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">保存修改</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!--add Modal -->
+        <div class="modal fade" id="add-str" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">新增分类</h4>
+                    </div>
+                    <div class="modal-body row">
+                        <form action="#" class="form-horizontal" id="edit-category" role="form" method="post">
+                            <div class="form-group">
+                                <label for="category-name" class="control-label col-xs-4">分类名</label>
+                                <div class="col-xs-6">
+                                	<input type="text" class="form-control" id="category-name" name="category-name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="parent" class="control-label col-xs-4">父级</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option class="level-0" value="-1">无</option>
+                                        <option class="level-0" value="0">父分级01</option>
+                                        <option class="level-0" value="1">父分级02</option>
+                                        <option class="level-0" value="2">父分级03</option>
+                                        <option class="level-1" value="3">&nbsp;&nbsp;&nbsp;子分级03</option>
+                                        <option class="level-1" value="4">&nbsp;&nbsp;&nbsp;子分级04</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="remark-category" class="col-xs-4 control-label">备注</label>
+                                <div class="col-xs-6">
+                                    <textarea class="form-control" id="remark-category" name="remark-category" rows="3" maxlength="150"></textarea>
+                                </div>
+                            </div>
+                </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">保存</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
                     <footer>
                         <hr>

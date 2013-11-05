@@ -90,12 +90,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="device-name" class="col-xs-4 control-label">设备名称</label>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="device-name" name="device-name">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="product-uuid" class="col-xs-4 control-label">设备ID</label>
                                 <div class="col-xs-4">
                                     <input type="text" class="form-control" id="product-uuid" name="product-uuid">
@@ -108,6 +102,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="device-name" class="col-xs-4 control-label">设备名称</label>
+                                <div class="col-xs-4">
+                                    <input type="text" class="form-control" id="device-name" name="device-name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="category-name" class="col-xs-4 control-label">分类目录</label>
+                                <div class="col-xs-4">
+                                    <select class="form-control">
+                                        <option class="level-0" value="-1">默认分类</option>
+                                        <option class="level-0" value="0">父分级01</option>
+                                        <option class="level-0" value="1">父分级02</option>
+                                        <option class="level-0" value="2">父分级03</option>
+                                        <option class="level-1" value="3">&nbsp;&nbsp;&nbsp;子分级03</option>
+                                        <option class="level-1" value="4">&nbsp;&nbsp;&nbsp;子分级04</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="device-description" class="col-xs-4 control-label">设备描述</label>
                                 <div class="col-xs-4">
                                     <textarea class="form-control" id="device-description" name="device-description" rows="3" maxlength="150"></textarea>
@@ -115,7 +128,6 @@
                             </div>
                            	<div class="form-actions col-xs-8 pull-right">
                         		<button type="submit" class="btn btn-primary">立即绑定</button>
-
                         		<button type="reset" class="btn btn-default">取消</button>
                     		</div>
                         </form>
