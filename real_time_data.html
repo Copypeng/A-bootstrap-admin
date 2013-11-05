@@ -72,7 +72,7 @@
             <div class="display">
                 <div class="row">
                     <div id="graphic" class="col-xs-12">
-                        <div id="Temp-chart" style="height:300px"></div>
+                        <div id="dynamic-chart" class="chart-area"></div>
                     </div><!--/span-->
                 </div>
             </div>
@@ -86,7 +86,7 @@
 
     </div>
     <!--the content end -->
-    <script type="text/javascript">
+    <script>
         require.config({
             packages: [
                 {
@@ -109,17 +109,17 @@
                 'echarts/chart/bar'
             ],
             function(ec) {
-                var myChart = ec.init(document.getElementById('Temp-chart'));
+                var myChart = ec.init(document.getElementById('dynamic-chart'));
                 var option = {
     title : {
         text: '动态数据',
-        subtext: '纯属虚构'
+        subtext: '数据虚构'
     },
     tooltip : {
         trigger: 'axis'
     },
     legend: {
-        data:['最新成交价', '预购队列']
+        data:['环境温度', '二氧化碳浓度']
     },
     toolbox: {
         show : true,
@@ -172,20 +172,20 @@
             scale: true,
             precision:1,
             power:1,
-            name : '价格',
+            name : '温度 /°C',
             boundaryGap: [0.2, 0.2],
             splitArea : {show : true}
         },
         {
             type : 'value',
             scale: true,
-            name : '预购量',
+            name : '百万分比浓度 /ppm',
             boundaryGap: [0.2, 0.2]
         }
     ],
     series : [
         {
-            name:'预购队列',
+            name:'二氧化碳浓度',
             type:'bar',
             xAxisIndex: 1,
             yAxisIndex: 1,
@@ -204,7 +204,7 @@
             })()
         },
         {
-            name:'最新成交价',
+            name:'环境温度',
             type:'line',
             itemStyle: {
                 normal: {
@@ -257,5 +257,6 @@ timeTicket = setInterval(function(){
     );
     </script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>var timeTicket</script>
   </body>
 </html>
