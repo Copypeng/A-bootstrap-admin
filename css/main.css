@@ -36,7 +36,7 @@ hr {
 }
 .navbar .nav {
   margin: 0em;
-  padding-top: 4px;
+  padding-top: 6px;
 }
 .navbar .nav > li > a {
   color: #fff;
@@ -60,6 +60,9 @@ hr {
 .navbar .nav li.dropdown.open > .dropdown-toggle {
   background-color: #37712b;
   color: #fff;
+}
+.navbar-default .navbar-brand {
+    font-size:1.8em;
 }
 .content {
   min-width: 400px;
