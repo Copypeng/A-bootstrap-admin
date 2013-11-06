@@ -101,20 +101,12 @@
                             </tr>
                         </tbody>
                         </table>
-                    <div class="add-led-display">
-                        <form class="form-inline" role="form" id="add-led-display">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="device01">气象站01</option>
-                                        <option value="device0102">气象站02</option>
-                                    </select>
-                                </div>
-                            <button type="submit" class="btn btn-primary">添加此传感设备显示</button>
-                        </form>
+                        <div class="more-device-button">
+                            <button  class="btn btn-primary" data-toggle="modal" data-target="#led-more-device"> 显示更多传感设备 </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-6">
+                <div class="col-xs-6">
                     <div class="panel panel-default" id="ledpanel">
                         <div class="panel-heading">
                             <h5>LED测试02<span class="make-switch pull-right" data-on="success" data-off="danger"><input type="checkbox" checked /></span></h5>
@@ -144,16 +136,8 @@
                             </tr>
                         </tbody>
                         </table>
-                    <div class="add-led-display">
-                        <form class="form-inline" role="form" id="add-led-display">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="device01">气象站01</option>
-                                        <option value="device0102">气象站02</option>
-                                    </select>
-                                </div>
-                            <button type="submit" class="btn btn-primary">添加此传感设备显示</button>
-                        </form>
+                    <div class="more-device-button">
+                            <button  class="btn btn-primary" data-toggle="modal" data-target="#led-more-device"> 显示更多传感设备 </button>
                     </div>
                 </div>
             </div>
@@ -187,16 +171,8 @@
                             </tr>
                         </tbody>
                         </table>
-                    <div class="add-led-display">
-                        <form class="form-inline" role="form" id="add-led-display">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="device01">气象站01</option>
-                                        <option value="device0102">气象站02</option>
-                                    </select>
-                                </div>
-                            <button type="submit" class="btn btn-primary">添加此传感设备显示</button>
-                        </form>
+                    <div class="more-device-button">
+                            <button  class="btn btn-primary" data-toggle="modal" data-target="#led-more-device"> 显示更多传感设备 </button>
                     </div>
                 </div>
             </div>
@@ -230,16 +206,8 @@
                             </tr>
                         </tbody>
                         </table>
-                    <div class="add-led-display">
-                        <form class="form-inline" role="form" id="add-led-display">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="device01">气象站01</option>
-                                        <option value="device0102">气象站02</option>
-                                    </select>
-                                </div>
-                            <button type="submit" class="btn btn-primary">添加此传感设备显示</button>
-                        </form>
+                    <div class="more-device-button">
+                            <button  class="btn btn-primary" data-toggle="modal" data-target="#led-more-device"> 显示更多传感设备 </button>
                     </div>
                 </div>
             </div>
@@ -247,6 +215,31 @@
         </div>
     </div>
         <!--the container end -->
+    <!-- Modal -->
+    <div class="modal fade" id="led-more-device" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">在此LED上添加以下传感设备：</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="#" role="form">
+                        <div class="form-group">
+                        <select class="form-control">
+                            <option value="">气象站03</option>
+                            <option value="">气象站04</option>
+                        </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
                     <footer>
                         <hr>
